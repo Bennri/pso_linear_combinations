@@ -1,3 +1,5 @@
+package pso
+
 import java.io.{BufferedWriter, File, FileWriter}
 
 import breeze.linalg.{*, DenseVector}
@@ -14,7 +16,7 @@ class PSO(val particleDimension: Int,
           val nParticles: Int = 20,
           val f: Particle => Particle = PSO.fitnessSphereFunction,
           val neighborhood: ParVector[Particle] => Particle = PSO.findGlobalBestSphere,
-          val resultPath: String = "outputIterations/result.json",
+          val resultPath: String = "result.json",
           // R.C. Eberhart, Y. Shi  Comparing inertia weights and constriction factors in particle swarm
           //optimization, in: Proceedings of the IEEE Congress on Evolutionary Computation, San
           //Diego, USA, 2000, pp. 84–88.
@@ -77,7 +79,6 @@ class PSO(val particleDimension: Int,
 
   def fit: ParVector[Particle] = {
     var stats: Vector[ujson.Obj] = Vector[ujson.Obj]()
-    // var stats: ujson.Arr = ujson.Arr()
     // create population
     var population: ParVector[Particle] = createPopulation(this.nParticles).par
     // compute init best neighbor
@@ -122,23 +123,18 @@ class PSO(val particleDimension: Int,
     bw.write(ujson.write(stats, indent = 4))
     bw.close()
 
-    // val bestParticle = population.tail.foldLeft(population.head)((p1, p2) => bestParticleFunction(p1, p2))
+    // best in population
+    // val bestParticle: Particle = population.tail.foldLeft(population.head)((p1, p2) => bestParticleFunction(p1, p2))
     population
   }
 
   def storePopulationInfosPerIteration(population: ParVector[Particle], i: Int): ujson.Obj = {
-    var s: String = ""
-    population.foreach(p => {
-
-      s += Particle.getPositionAsString(p.position) + "\n"
-    })
-
     // current best position
-    val cBest = Particle.getPositionAsString(population.head.neighborhoodBestPosAndFitness._1)
+    val bestParticle: Particle = population.tail.foldLeft(population.head)((p1, p2) => bestParticleFunction(p1, p2))
+    val cBest = Particle.getPositionAsString(bestParticle.position)
     // create JSON object to store some information per iteration
     // a list of JSON objects will be stored to disc after training
     val currenDataI = ujson.Obj("iteration" -> ujson.Num(i),
-      "population" -> ujson.Str(s),
       "currentBest" -> ujson.Str(cBest),
       "currentBestFitness" -> ujson.Num(population.head.neighborhoodBestPosAndFitness._2),
     "meanFitnessSwarm" -> ujson.Num(population.foldLeft(0.0)((acc, p) => acc + p.fitness) / population.length))

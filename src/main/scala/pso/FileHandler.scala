@@ -1,3 +1,5 @@
+package pso
+
 import java.io.FileNotFoundException
 
 import breeze.linalg.{DenseMatrix, DenseVector, csvread}

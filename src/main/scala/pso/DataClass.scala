@@ -1,3 +1,5 @@
+package pso
+
 import breeze.linalg.{DenseMatrix, DenseVector}
 
 case class DataClass(m: DenseMatrix[Double],

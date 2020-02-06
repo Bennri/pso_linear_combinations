@@ -1,3 +1,5 @@
+package pso
+
 import FileHandler.loadCSVdata
 import breeze.linalg.{DenseMatrix, DenseVector}
 

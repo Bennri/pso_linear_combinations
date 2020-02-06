@@ -1,3 +1,5 @@
+package pso
+
 import breeze.linalg.DenseVector
 
 // particle position vector, velocity vector, fitness, own best position, neighborhood best position

@@ -1,8 +1,9 @@
-name := "pso_linear_combinations"
-
-version := "0.1"
-
-scalaVersion := "2.13.0"
+lazy val root = (project in file(".")).settings(
+  name := "pso_linear_combinations",
+  version := "0.2",
+  scalaVersion := "2.13.0",
+  mainClass in Compile := Some("pso.Main")
+)
 
 libraryDependencies  ++= Seq(
   "org.scalanlp" %% "breeze" % "1.0",
