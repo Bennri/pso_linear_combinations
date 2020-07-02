@@ -12,9 +12,7 @@ case class Particle(var position: DenseVector[Double],
 
   override def toString: String = "Fitness: " + this.fitness + ", Position: " + this.position
 
-
 }
-
 object Particle {
 
   def apply(postion: DenseVector[Double],
@@ -32,22 +30,10 @@ object Particle {
   }
 
   def max(p1: Particle, p2: Particle): Particle = {
-    if (p1.fitness > p2.fitness) {
-      p1
-    }
-    else {
-      p2
-    }
+    if (p1.fitness > p2.fitness) p1 else p2
   }
 
   def min(p1: Particle, p2: Particle): Particle = {
-    if (p1.fitness < p2.fitness) {
-      p1
-    }
-    else {
-      p2
-    }
+    if (p1.fitness < p2.fitness) p1 else p2
   }
-
-
 }

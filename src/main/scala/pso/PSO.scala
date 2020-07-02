@@ -10,7 +10,6 @@ import scala.collection.parallel.CollectionConverters._
 import scala.collection.parallel.immutable.ParVector
 
 
-
 class PSO(val particleDimension: Int,
           val iterations: Int,
           val nParticles: Int = 20,
@@ -24,6 +23,7 @@ class PSO(val particleDimension: Int,
           val C2: Double = 1.49618,
           val w: Double = 0.7298,
           val randDistribution: Rand[Double] = Rand.uniform,
+          val storeInfoJSONproIteration: Boolean = true,
           val bestParticleFunction: (Particle, Particle) => Particle = Particle.max) {
 
   // NOT extended weight vector, initialized using uniform distribution
@@ -69,6 +69,7 @@ class PSO(val particleDimension: Int,
     currParticle.velocity = newVelocity
     currParticle
   }
+
   def toString(population: ParVector[Particle]): String = {
     var s = ""
     for (i <- Range(0, population.length)) {
@@ -94,7 +95,7 @@ class PSO(val particleDimension: Int,
 
     for (i <- Range(0, iterations)) {
       if (i % 5 == 0) {
-        println(s"Iteration: $i")
+        println(s"Iteration: " + (i + 1))
       }
       // compute new velocity
       population = population.par.map(p => updateVelocity(p))
@@ -113,31 +114,33 @@ class PSO(val particleDimension: Int,
       population.par.foreach(p => {
         p.neighborhoodBestPosAndFitness = (currentBest.position, currentBest.fitness)
       })
-
       // store each iteration
-      stats = stats :+ storePopulationInfosPerIteration(population, i)
+      if (storeInfoJSONproIteration) {
+        stats = stats :+ createPopulationInfosPerIterationJson(population, i)
+      }
     }
-
-    val file = new File(resultPath)
-    val bw = new BufferedWriter(new FileWriter(file))
-    bw.write(ujson.write(stats, indent = 4))
-    bw.close()
+    if (storeInfoJSONproIteration) {
+      val file = new File(resultPath)
+      val bw = new BufferedWriter(new FileWriter(file))
+      bw.write(ujson.write(stats, indent = 4))
+      bw.close()
+    }
 
     // best in population
     // val bestParticle: Particle = population.tail.foldLeft(population.head)((p1, p2) => bestParticleFunction(p1, p2))
     population
   }
 
-  def storePopulationInfosPerIteration(population: ParVector[Particle], i: Int): ujson.Obj = {
+  def createPopulationInfosPerIterationJson(population: ParVector[Particle], i: Int): ujson.Obj = {
     // current best position
     val bestParticle: Particle = population.tail.foldLeft(population.head)((p1, p2) => bestParticleFunction(p1, p2))
     val cBest = Particle.getPositionAsString(bestParticle.position)
     // create JSON object to store some information per iteration
     // a list of JSON objects will be stored to disc after training
-    val currenDataI = ujson.Obj("iteration" -> ujson.Num(i),
+    val currenDataI = ujson.Obj("iteration" -> ujson.Num(i + 1),
       "currentBest" -> ujson.Str(cBest),
       "currentBestFitness" -> ujson.Num(population.head.neighborhoodBestPosAndFitness._2),
-    "meanFitnessSwarm" -> ujson.Num(population.foldLeft(0.0)((acc, p) => acc + p.fitness) / population.length))
+      "meanFitnessSwarm" -> ujson.Num(population.foldLeft(0.0)((acc, p) => acc + p.fitness) / population.length))
     currenDataI
   }
 
@@ -145,25 +148,10 @@ class PSO(val particleDimension: Int,
 
 object PSO {
 
-  def apply(particleDimension: Int,
-            iterations: Int,
-            nParticles: Int,
-            f: Particle => Particle,
-            neighborhood: ParVector[Particle] => Particle,
-            resultPath: String,
-            C1: Double,
-            C2: Double,
-            w: Double,
-            randDistribution: Rand[Double]): PSO = new PSO(particleDimension,
-    iterations,
-    nParticles,
-    f,
-    neighborhood,
-    resultPath,
-    C1,
-    C2,
-    w,
-    randDistribution)
+  def apply(particleDimension: Int, iterations: Int,  nParticles: Int, f: Particle => Particle,
+            neighborhood: ParVector[Particle] => Particle, resultPath: String, C1: Double,
+            C2: Double, w: Double, randDistribution: Rand[Double]): PSO = new PSO(particleDimension,
+    iterations, nParticles, f, neighborhood, resultPath, C1, C2, w, randDistribution)
 
 
   def fitnessSphereFunction(particle: Particle): Particle = {
@@ -238,6 +226,4 @@ object PSO {
     particle.fitness = fitness
     particle
   }
-
-
 }

@@ -18,7 +18,8 @@ object Main {
     """
 
   def main(args: Array[String]): Unit = {
-    val necessaryParameters = Set("rowsAsSamples", "sampleNames", "nParticles", "dataset", "dim", "iterations", "outputFile")
+    val necessaryParameters = Set("rowsAsSamples", "sampleNames", "nParticles", "dataset", "dim", "iterations",
+      "outputFile")
     var everythingIsFine: Boolean = true
     var options: Map[String, Any] = Map()
 
@@ -37,9 +38,9 @@ object Main {
         case "--iterations" :: value :: tail => nextOption(map ++ Map("iterations" -> testValue(value.toInt)), tail)
         case "--rows-as-samples" :: value :: tail => nextOption(map ++ Map("rowsAsSamples" -> value.toString), tail)
         case "--sample-names-available" :: value :: tail => nextOption(map ++ Map("sampleNames" -> value), tail)
-        case _ :: tail => {
-          println("Unknown option ")
-          println(list)
+        case x :: tail => {
+          println("Unknown option: " + x)
+          // println(list)
           everythingIsFine = false
           map
         }
@@ -55,20 +56,14 @@ object Main {
         println("parameter ok")
         println(options)
 
-        print("Dataset path: ")
-        println(options("dataset"))
-        print("Dimension: ")
-        println(options("dim"))
-        print("Iterations: ")
-        println(options("iterations"))
-        print("Number of particles: ")
-        println(options("nParticles"))
+        println("Dataset path: " + options("dataset"))
+        println("Dimension: " + options("dim"))
+        println("Iterations: " + options("iterations"))
+        println("Number of particles: " + options("nParticles"))
         print("Rows are samples: ")
-        println(options("rowsAsSamples"))
-        print("Sample names set: ")
-        println(options("sampleNames"))
-        print("Output file: ")
-        println(options("outputFile"))
+        println("Rows are samples: " + options("rowsAsSamples"))
+        println("Sample names set: " + options("sampleNames"))
+        println("Output file: " + options("outputFile"))
 
         // val rowsAsSamples: Boolean = true
         // val sampleNames: Boolean = false
@@ -90,6 +85,7 @@ object Main {
               dataMatrix(1 to -1, ::) := dataObj.m
             }
             val modDataObj = DataClass(dataMatrix, dataObj.labels, dataObj.features, options("rowsAsSamples").toString.toBoolean)
+            // currying
             val f = PSO.fitnessAccuracy(modDataObj)(_)
             // TODO init particle within min/max range of the data per dimension
             // TODO flag to on/off iteration based storing
@@ -100,19 +96,13 @@ object Main {
               resultPath = options("outputFile").toString,
               randDistribution = Uniform(-10, 10))
             val finalPopulation = pso.fit
-
-            // println(pso.toString(finalPopulation))
             val bestParticle = finalPopulation.tail.foldLeft(finalPopulation.head)((p1, p2) => Particle.max(p1, p2))
-            // println(finalPopulation.head.neighborhoodBestPosAndFitness._2)
             println(bestParticle.fitness)
             println(bestParticle.position)
             println(bestParticle.position.length)
           }
           case _ => println("No data object available")
         }
-
-
-
 
         // optimization of sphere function
         /*    val pso = new PSO(2, 200, 100)
