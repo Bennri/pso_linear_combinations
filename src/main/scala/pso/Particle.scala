@@ -22,12 +22,19 @@ object Particle {
             fitness: Double): Particle = new Particle(postion, velocity, ownBestPosAndFitness, neighborhoodBestPosAndFitness, fitness)
 
   def getPositionAsString(p: DenseVector[Double]): String = {
-    var pos: String = ""
-    p.foreach(d => {
-      pos += d + " "
-    })
-    pos
+
+    getPositionAsStringHelper(p, 0, "")
   }
+
+  def getPositionAsStringHelper(p: DenseVector[Double], currIdx: Int, posString: String): String = {
+    if (currIdx < p.length - 1) {
+      getPositionAsStringHelper(p, currIdx + 1, posString + p.valueAt(currIdx) + " ")
+    }
+    else {
+      posString + p.valueAt(currIdx)
+    }
+  }
+
 
   def max(p1: Particle, p2: Particle): Particle = {
     if (p1.fitness > p2.fitness) p1 else p2
