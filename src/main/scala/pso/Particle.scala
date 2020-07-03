@@ -26,6 +26,7 @@ object Particle {
     getPositionAsStringHelper(p, 0, "")
   }
 
+  @scala.annotation.tailrec
   def getPositionAsStringHelper(p: DenseVector[Double], currIdx: Int, posString: String): String = {
     if (currIdx < p.length - 1) {
       getPositionAsStringHelper(p, currIdx + 1, posString + p.valueAt(currIdx) + " ")
