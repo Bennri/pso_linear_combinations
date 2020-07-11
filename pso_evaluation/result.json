@@ -1,0 +1,302 @@
+[
+    {
+        "iteration": 1,
+        "currentBest": "6.965918472827141 -3.766409218142668 9.199099501792077",
+        "currentBestFitness": 50,
+        "meanFitnessSwarm": 46.3
+    },
+    {
+        "iteration": 2,
+        "currentBest": "6.965918472827141 -3.766409218142668 9.199099501792077",
+        "currentBestFitness": 50,
+        "meanFitnessSwarm": 50
+    },
+    {
+        "iteration": 3,
+        "currentBest": "2.936409207382271 -3.2261891557377247 7.181962032305009",
+        "currentBestFitness": 57,
+        "meanFitnessSwarm": 50.7
+    },
+    {
+        "iteration": 4,
+        "currentBest": "4.254837430760242 -4.44581509055238 8.440932959876651",
+        "currentBestFitness": 72,
+        "meanFitnessSwarm": 52.4
+    },
+    {
+        "iteration": 5,
+        "currentBest": "1.9667830088658196 -4.951691000079706 7.371413749759142",
+        "currentBestFitness": 97,
+        "meanFitnessSwarm": 59.2
+    },
+    {
+        "iteration": 6,
+        "currentBest": "3.28521123224379 -5.298622700580278 8.630384677330785",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 63.5
+    },
+    {
+        "iteration": 7,
+        "currentBest": "2.341051926935959 -5.418676625766726 8.19560624671551",
+        "currentBestFitness": 98,
+        "meanFitnessSwarm": 60.4
+    },
+    {
+        "iteration": 8,
+        "currentBest": "3.5605982990364717 -5.659933604502076 8.70250245521156",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 67.4
+    },
+    {
+        "iteration": 9,
+        "currentBest": "4.886790528295501 -5.92228781896483 9.253725293577663",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 65.9
+    },
+    {
+        "iteration": 10,
+        "currentBest": "5.333703350826327 -6.01069842785063 9.439481588255463",
+        "currentBestFitness": 98,
+        "meanFitnessSwarm": 65.4
+    },
+    {
+        "iteration": 11,
+        "currentBest": "5.57022964715033 -6.118111671883318 9.584276229067253",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 69.2
+    },
+    {
+        "iteration": 12,
+        "currentBest": "5.612298740534559 -6.928681780063611 9.767962527596811",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 69.2
+    },
+    {
+        "iteration": 13,
+        "currentBest": "5.586438087912094 -6.430409288133395 9.655047150162979",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 68.5
+    },
+    {
+        "iteration": 14,
+        "currentBest": "6.617984186230016 -7.055010976673371 9.928025646258543",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 68.2
+    },
+    {
+        "iteration": 15,
+        "currentBest": "6.589134000449759 -7.056914013032923 9.941878167402425",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 72.8
+    },
+    {
+        "iteration": 16,
+        "currentBest": "6.404822171095121 -6.753194871400966 9.847308498196877",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 77.7
+    },
+    {
+        "iteration": 17,
+        "currentBest": "5.913625272115299 -6.782046378997859 9.781407501510865",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79.2
+    },
+    {
+        "iteration": 18,
+        "currentBest": "5.529855738624176 -6.754197716664834 9.718792543091016",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 77
+    },
+    {
+        "iteration": 19,
+        "currentBest": "5.289736608623728 -6.104373777218263 9.539972619445106",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 76.4
+    },
+    {
+        "iteration": 20,
+        "currentBest": "5.995877121127789 -6.935973768900183 9.864326214031266",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 78.8
+    },
+    {
+        "iteration": 21,
+        "currentBest": "7.593258296132229 -6.840848507759563 10.192214008381795",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 79.4
+    },
+    {
+        "iteration": 22,
+        "currentBest": "6.741002898063018 -7.100852039092043 10.367418467290374",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 78.9
+    },
+    {
+        "iteration": 23,
+        "currentBest": "6.354792895369185 -7.149403614054824 10.386565251830769",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 78.9
+    },
+    {
+        "iteration": 24,
+        "currentBest": "5.875680334130173 -7.13317421129531 10.2163729426904",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79
+    },
+    {
+        "iteration": 25,
+        "currentBest": "5.655220898993954 -7.0973575461941545 10.066152117606972",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 78.1
+    },
+    {
+        "iteration": 26,
+        "currentBest": "6.419176189959614 -7.34219102886032 10.245394985729927",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79
+    },
+    {
+        "iteration": 27,
+        "currentBest": "6.800712014412785 -7.3969762804282855 10.38533667724148",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79.2
+    },
+    {
+        "iteration": 28,
+        "currentBest": "6.426129395306003 -6.730922806071619 10.047475417582888",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79.2
+    },
+    {
+        "iteration": 29,
+        "currentBest": "5.777350744757706 -6.934507799677904 10.12951227717146",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 77.1
+    },
+    {
+        "iteration": 30,
+        "currentBest": "5.083910392160641 -6.216075035981539 9.610344495618468",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 79.3
+    },
+    {
+        "iteration": 31,
+        "currentBest": "4.812361527708993 -5.955004204382059 9.348176015355184",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 77.9
+    },
+    {
+        "iteration": 32,
+        "currentBest": "5.620886899975367 -6.433696589302939 9.640075161506239",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 76.3
+    },
+    {
+        "iteration": 33,
+        "currentBest": "8.483506092866733 -7.203033713816721 10.456115372591944",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 79.7
+    },
+    {
+        "iteration": 34,
+        "currentBest": "6.179167055434762 -6.861919365153469 9.961194393539717",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 81.4
+    },
+    {
+        "iteration": 35,
+        "currentBest": "6.966769608653214 -6.626528818004828 10.032537331493828",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 84.4
+    },
+    {
+        "iteration": 36,
+        "currentBest": "5.944703371504927 -6.2563420363620565 9.7819707519696",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 82.6
+    },
+    {
+        "iteration": 37,
+        "currentBest": "6.651909454340391 -6.525311258867419 9.899650310080082",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 85.5
+    },
+    {
+        "iteration": 38,
+        "currentBest": "8.050977621359632 -6.985373074188765 10.348438211673848",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 85.9
+    },
+    {
+        "iteration": 39,
+        "currentBest": "8.730549669489868 -7.213307929182401 10.559417198035396",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 87.7
+    },
+    {
+        "iteration": 40,
+        "currentBest": "9.219301442946833 -7.377296838905171 10.711064990719311",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 87.9
+    },
+    {
+        "iteration": 41,
+        "currentBest": "7.803856636498287 -6.912330130905896 10.256270127395535",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 88.2
+    },
+    {
+        "iteration": 42,
+        "currentBest": "6.695746203118367 -6.547500480385387 9.901512509521927",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 86.8
+    },
+    {
+        "iteration": 43,
+        "currentBest": "5.461043838522218 -6.307409467997013 9.528934771896832",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 88.7
+    },
+    {
+        "iteration": 44,
+        "currentBest": "5.447013920564788 -6.213034249821206 9.612355311111681",
+        "currentBestFitness": 99,
+        "meanFitnessSwarm": 85.7
+    },
+    {
+        "iteration": 45,
+        "currentBest": "7.505071484618176 -6.866270883208041 10.212949166863483",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 89.3
+    },
+    {
+        "iteration": 46,
+        "currentBest": "7.7310080457999835 -6.9324441146382005 10.303041035189482",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 87.9
+    },
+    {
+        "iteration": 47,
+        "currentBest": "7.966760852800112 -7.19036693060216 10.685610898377682",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 88.7
+    },
+    {
+        "iteration": 48,
+        "currentBest": "9.285189076178082 -7.670257341417593 11.060685040331755",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 87.6
+    },
+    {
+        "iteration": 49,
+        "currentBest": "7.94566981291258 -7.172540059691757 10.59438882304563",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 89.1
+    },
+    {
+        "iteration": 50,
+        "currentBest": "8.607698886238516 -7.482803896283369 10.925450230243994",
+        "currentBestFitness": 100,
+        "meanFitnessSwarm": 87.2
+    }
+]
