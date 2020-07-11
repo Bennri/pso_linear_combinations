@@ -7,6 +7,8 @@ The dataset, which was used to test the PSO algorithm can be generated with the 
 ### One possible result of the algorithm:
 ![](./pso_evaluation/result_plot.png)
 
+The dataset is obtained from: [https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html)
+
 ### References
 Kennedy, J., & Eberhart, R. (1995, November). Particle swarm optimization. In Proceedings of ICNN'95-International Conference on Neural Networks (Vol. 4, pp. 1942-1948). IEEE.
 
