@@ -1,4 +1,4 @@
-# pso_linear_combination
+# Particle Swarm Optimization: Linear Combination
 Particle Swarm Optimization (PSO) algorithm for hyperplane optimization.
 A project to get more familiar with the Scala language.
 
